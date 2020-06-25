@@ -1,5 +1,14 @@
 <?php
 
+
+$hash ='';
+$error = array();
+
+
+if (!empty($_POST['login']) && (!empty($_POST['password']))) {
+    echo 'test';
+}
+
 // Constantes
 define('TARGET', 'img/');    // Repertoire cible
 define('MAX_SIZE', 1 * 1000 * 1000);    // Taille max en octets du fichier
@@ -29,7 +38,7 @@ if (!is_dir(TARGET)) {
  * Script d'upload
  *************************************************************/
 
-if (!empty($_POST)) {
+if (!empty($_FILES['fichier']['name'])) {
     $fileName = $_FILES['fichier']['name'];
     $fileTemp = $_FILES['fichier']['tmp_name'];
     $fileError = $_FILES['fichier']['error'];
@@ -84,4 +93,3 @@ if (!empty($_POST)) {
     }
 }
 
-?>

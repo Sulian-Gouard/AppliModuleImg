@@ -3,3 +3,16 @@
 	max-height: 200px;
 	display: block;
 }
+
+.mainTitle {
+	color: #4D7C8A;
+}
+
+.btn-outline-info {
+	background-color: #4D7C8A;
+	color: #F5F5F5;
+}
+
+.backgroundForm {
+	background-color: #F5F5F5;
+}

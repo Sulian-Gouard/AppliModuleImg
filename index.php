@@ -15,6 +15,24 @@ require_once 'my-config.php';
 </head>
 
 <body>
+    <div class="container bg-light">
+        <div class="row">
+            <form class="col-sm-6 mb-3" action="index.php" method="post" novalidate>
+                <div class="h3 text-info">Formulaire d'inscription</div>
+                <div class="form-group">
+                    <label for="login" class="text-secondary font-weight-bold">login</label>
+                    <input type="text" class="form-control" id="login" name="login" value="<?= isset($_POST['login']) ? $_POST['login'] : '' ?>" required>
+                    <span class="font-italic text-danger"><?= isset($error['login']) ? $error['login'] : '' ?></span>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="text-secondary font-weight-bold">password</label>
+                    <input type="password" class="form-control" id="password" name="password" value="<?= isset($_POST['password']) ? $_POST['password'] : '' ?>" required>
+                    <span class="font-italic text-danger"><?= isset($error['password']) ? $error['password'] : '' ?></span>
+                </div>
+                <button type="submit" name="submit" class="btn btn-outline-primary">Envoyer</button>
+            </form>
+        </div>
+    </div>
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
