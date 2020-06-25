@@ -120,10 +120,8 @@ var_dump($_FILES);
                 <?php
                 if (!empty($message)) { ?>
                     <div class="text-secondary h6 font-weight-bold"><?= htmlspecialchars($message) ?></div>
-                    <img class="" src="<?= $_FILES['fichier'] ?>" alt="photo affiché">
                 <?php
                 }
-                var_dump($_FILES['fichier']);
                 ?>
             </div>
         </div>
