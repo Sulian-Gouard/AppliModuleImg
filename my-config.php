@@ -1,5 +1,25 @@
 <?php
 
+$error = array();
+
+if (isset($_POST['login'])) {
+    if (preg_match("/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð-]{0,18}+$/u", $_POST['login']) == false) {
+        $error['login'] = 'Mauvais format';
+    };
+    if (empty($_POST['login'])) {
+        $error['login'] = 'Veuillez renseigner le champ';
+    };
+}
+
+if (isset($_POST['password'])) {
+    if (preg_match("/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð-]{0,18}+$/u", $_POST['password']) == false) {
+        $error['password'] = 'Mauvais format';
+    };
+    if (empty($_POST['password'])) {
+        $error['password'] = 'Veuillez renseigner le champ';
+    };
+}
+
 // Constantes
 define('TARGET', 'img/');    // Repertoire cible
 define('MAX_SIZE', 1 * 1000 * 1000);    // Taille max en octets du fichier
@@ -84,4 +104,3 @@ if (!empty($_POST)) {
     }
 }
 
-?>

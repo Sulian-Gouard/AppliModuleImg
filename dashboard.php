@@ -1,6 +1,5 @@
 <?php
 require_once 'my-config.php';
-
 ?>
 
 <!DOCTYPE html>
