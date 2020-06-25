@@ -1,13 +1,20 @@
 <?php
 
 
-$hash ='';
+$usersArray = [
+    'admin' => 'navet',
+    'guest' => 'carotte'
+];
+
 $error = array();
 
-
 if (!empty($_POST['login']) && (!empty($_POST['password']))) {
-    echo 'test';
+    if ($usersArray[$_POST['login']] == $_POST['password']) {
+        header("Location: dashboard.php");
+    }
 }
+
+
 
 // Constantes
 define('TARGET', 'img/');    // Repertoire cible
@@ -92,4 +99,3 @@ if (!empty($_FILES['fichier']['name'])) {
         $message = 'Veuillez uploader une image valide (Taille, Type ... ) !';
     }
 }
-

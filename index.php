@@ -22,13 +22,12 @@ require_once 'my-config.php';
                 <div class="form-group">
                     <label for="login" class="text-secondary font-weight-bold">login</label>
                     <input type="text" class="form-control" id="login" name="login" value="<?= isset($_POST['login']) ? $_POST['login'] : '' ?>" required>
-                    <span class="font-italic text-danger"><?= isset($error['login']) ? $error['login'] : '' ?></span>
                 </div>
                 <div class="form-group">
                     <label for="password" class="text-secondary font-weight-bold">password</label>
                     <input type="password" class="form-control" id="password" name="password" value="<?= isset($_POST['password']) ? $_POST['password'] : '' ?>" required>
-                    <span class="font-italic text-danger"><?= isset($error['password']) ? $error['password'] : '' ?></span>
                 </div>
+                <span class="font-italic text-danger"><?= isset($error['login']) ? $error['login'] : '' ?></span>
                 <button type="submit" name="submit" class="btn btn-outline-primary">Envoyer</button>
             </form>
         </div>
