@@ -1,9 +1,8 @@
 <?php
 
-// var_dump($_POST);
 // Constantes
 define('TARGET', 'img/');    // Repertoire cible
-define('MAX_SIZE', 2 * 1000 * 1000);    // Taille max en octets du fichier
+define('MAX_SIZE', 1 * 1000 * 1000);    // Taille max en octets du fichier
 define('WIDTH_MAX', 80000);    // Largeur max de l'image en pixels
 define('HEIGHT_MAX', 80000);    // Hauteur max de l'image en pixels
 
@@ -29,7 +28,6 @@ if (!is_dir(TARGET)) {
 /************************************************************
  * Script d'upload
  *************************************************************/
-// var_dump($_FILES);
 
 if (!empty($_POST)) {
     $fileName = $_FILES['fichier']['name'];
@@ -50,7 +48,7 @@ if (!empty($_POST)) {
             // On verifie le type de l'image
             if ($infosImg[2] >= 1 && $infosImg[2] <= 14) {
                 // On verifie les dimensions et taille de l'image
-                if ((filesize($fileTemp) <= MAX_SIZE)) {
+                if (($infosImg[0] <= WIDTH_MAX) && ($infosImg[1] <= HEIGHT_MAX) && (filesize($fileTemp) <= MAX_SIZE)) {
                     // Parcours du tableau d'erreurs
                     if (
                         isset($fileError) && UPLOAD_ERR_OK === $fileError
@@ -85,6 +83,7 @@ if (!empty($_POST)) {
         $message = 'Veuillez uploader une image valide (Taille, Type ... ) !';
     }
 }
+var_dump($_FILES);
 
 ?>
 
@@ -100,47 +99,30 @@ if (!empty($_POST)) {
 </head>
 
 <body>
-    <div class="container pt-5">
-        <div class="myBg col-sm-6">
-            <div class="row">
-                <div class="col-sm">
-                    <p class="h2">Module d'enregistrement d'images.</p>
-                    <p>Mise en pratique php: upload d'images.</p>
-                </div>
+    <div class="container backgroundForm">
+        <div class="row">
+            <div class="col-sm mb-3">
+                <div class="h2 mainTitle">Module d'Enregistrement d'Images</div>
+                <div class="h5 text-infoi">Mise en pratique PHP : Upload d'images.</div>
             </div>
-            <div class="row">
-                <div class="col-sm">
-                    <img class="preview">
-                    <form enctype="multipart/form-data" action="" method="post">
-                        <div><?= 'Veuillez choisir un fichier de : ' . MAX_SIZE / 1000000 . ' Mega Octet maximum' ?></div>
-
-                        <div class="custom-file col-sm-10 pt-2">
-                            <input name="fichier" type="file" class="custom-file-input" id="fichier_a_uploader" data-preview=".preview">
-                            <label class="custom-file-label" for="fichier_a_uploader" data-browse="Parcourir"><?= MAX_SIZE / 1000000 . ' Mo maximum' ?></label>
-                        </div>
-                        <div class="input-group-append pt-2">
-                            <button class="btn btn-outline-success" type="submit" name="submit" value="Uploader" id="inputGroupFileAddon04">Uploader</button>
-                        </div>
-
-
-                        <div class="input-group">
-                            <div class="custom-file">
-                                <input name="fichier" type="file" class="custom-file-input" id="fichier_a_uploader" data-preview=".preview">
-                                <label class="custom-file-label" for="fichier_a_uploader">Choose file</label>
-                            </div>
-                            <div class="input-group-append">
-                                <button class="btn btn-outline-secondary" type="button" id="inputGroupFileAddon04">Button</button>
-                            </div>
-                        </div>
-                    </form>
-
-                    <?php
-                    if (!empty($message)) {
-
-                        echo "\t\t<strong>", htmlspecialchars($message), "</strong>\n";
-                    }
-                    ?>
-                </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5">
+                <img class="preview">
+                <form enctype="multipart/form-data" action="" method="post" class=" p-3">
+                    <div class="form-group">
+                        <label for="fichier_a_uploader" title="Recherchez le fichier à uploader !">Envoyer le fichier :</label>
+                        <?= '(  ' . MAX_SIZE / 1000000 . ' Mo Max)' ?>
+                        <input name="fichier" type="file" id="fichier_a_uploader" class="form-control-file" data-preview=".preview">
+                    </div>
+                    <button type="submit" name="submit" class="btn btn-outline-info mb-1">Uploader</button>
+                </form>
+                <?php
+                if (!empty($message)) { ?>
+                    <div class="text-secondary h6 font-weight-bold"><?= htmlspecialchars($message) ?></div>
+                <?php
+                }
+                ?>
             </div>
         </div>
     </div>
