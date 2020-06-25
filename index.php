@@ -83,8 +83,6 @@ if (!empty($_POST)) {
         $message = 'Veuillez uploader une image valide (Taille, Type ... ) !';
     }
 }
-var_dump($_FILES);
-
 ?>
 
 <!DOCTYPE html>
@@ -93,17 +91,17 @@ var_dump($_FILES);
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets\uploadPreview.css">
+    <link rel="stylesheet" href="AppliModuleImg\assets\uploadPreview.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>moduleIMG</title>
 </head>
 
 <body>
-    <div class="container backgroundForm">
-        <div class="row">
+    <div class="container">
+        <div class="row ml-">
             <div class="col-sm mb-3">
                 <div class="h2 mainTitle">Module d'Enregistrement d'Images</div>
-                <div class="h5 text-infoi">Mise en pratique PHP : Upload d'images.</div>
+                <div class="h5 text-info">Mise en pratique PHP : Upload d'images.</div>
             </div>
         </div>
         <div class="row">
