@@ -1,24 +1,29 @@
 <?php
 
+$regexLogin = "/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð-]{0,18}+$/u";
+$hash ='';
 $error = array();
 
-if (isset($_POST['login'])) {
-    if (preg_match("/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð-]{0,18}+$/u", $_POST['login']) == false) {
-        $error['login'] = 'Mauvais format';
-    };
-    if (empty($_POST['login'])) {
-        $error['login'] = 'Veuillez renseigner le champ';
-    };
-}
 
-if (isset($_POST['password'])) {
-    if (preg_match("/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð-]{0,18}+$/u", $_POST['password']) == false) {
-        $error['password'] = 'Mauvais format';
+if (isset($_POST['login']) && isset($_POST['password'])) {
+    if (!preg_match($regexLogin, $_POST['login']) && (password_verify($_POST['password'], $hash))) {
+        $error['login'] = 'Champs mal renseignés';
+        $error['password'] = 'Champs mal renseignés';
     };
-    if (empty($_POST['password'])) {
+    if (empty($_POST['login']) && empty($_POST['password'])) {
+        $error['login'] = 'Veuillez renseigner le champ';
         $error['password'] = 'Veuillez renseigner le champ';
     };
 }
+
+// if (isset($_POST['password'])) {
+//     if (preg_match("/^[a-zA-ZàáâäãåąčćęèéêëėįìíîïłńòóôöõøùúûüųūÿýżźñçčšžÀÁÂÄÃÅĄĆČĖĘÈÉÊËÌÍÎÏĮŁŃÒÓÔÖÕØÙÚÛÜŲŪŸÝŻŹÑßÇŒÆČŠŽ∂ð-]{0,18}+$/u", $_POST['password']) == false) {
+//         $error['password'] = 'Mauvais format';
+//     };
+//     if (empty($_POST['password'])) {
+//         $error['password'] = 'Veuillez renseigner le champ';
+//     };
+// }
 
 // Constantes
 define('TARGET', 'img/');    // Repertoire cible
