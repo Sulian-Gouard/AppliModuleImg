@@ -15,33 +15,7 @@ require_once 'my-config.php';
 </head>
 
 <body>
-    <div class="container">
-        <div class="row-sm-6">
-            <div class="col mb-3">
-                <div class="h2 mainTitle">Module d'Enregistrement d'Images</div>
-                <div class="h5 text-info">Mise en pratique PHP : Upload d'images.</div>
-            </div>
-        </div>
-        <div class="row-sm-6">
-            <div class="col">
-                <img class="preview">
-                <form enctype="multipart/form-data" action="" method="post" class="">
-                    <div class="form-group">
-                        <label for="fichier_a_uploader" title="Recherchez le fichier à uploader !">Envoyer le fichier :</label>
-                        <?= '(  ' . MAX_SIZE / 1000000 . ' Mo Max)' ?>
-                        <input name="fichier" type="file" id="fichier_a_uploader" class="form-control-file" data-preview=".preview">
-                    </div>
-                    <button type="submit" name="submit" class="btn btn-outline-info mb-1">Uploader</button>
-                </form>
-                <?php
-                if (!empty($message)) { ?>
-                    <div class="text-secondary h6 font-weight-bold"><?= htmlspecialchars($message) ?></div>
-                <?php
-                }
-                ?>
-            </div>
-        </div>
-    </div>
+    
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
