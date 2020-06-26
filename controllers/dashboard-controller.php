@@ -1,7 +1,11 @@
 <?php
 require_once 'my-config.php';
 
-
+if($_SESSION['login'] !='admin') {
+    header('location: not-allowed.php');
+    exit;
+ }
+ 
 // Constantes
 define('TARGET', 'img/');    // Repertoire cible
 define('MAX_SIZE', 1 * 1000 * 1000);    // Taille max en octets du fichier
@@ -85,4 +89,3 @@ if (!empty($_FILES['fichier']['name'])) {
         $message = 'Veuillez uploader une image valide (Taille, Type ... ) !';
     }
 }
-
