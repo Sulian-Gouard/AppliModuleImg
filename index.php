@@ -15,19 +15,22 @@ require_once 'my-config.php';
 </head>
 
 <body>
-    <div class="container bg-light">
-        <div class="row">
-            <form class="col-sm-6 mb-3" action="index.php" method="post" novalidate>
-                <div class="h3 text-info">Formulaire d'inscription</div>
+    <div class="container">
+        <div class="row justify-content-center mt-5 ">
+            <form class="col-sm-6 mb-3 bg-light p-5 shadow" action="index.php" method="post" novalidate>
+                <div class="h1 text-info text-center mb-3">allPIX</div>
                 <div class="form-group">
                     <label for="login" class="text-secondary font-weight-bold">login</label>
                     <input type="text" class="form-control" id="login" name="login" value="<?= isset($_POST['login']) ? $_POST['login'] : '' ?>" required>
                 </div>
                 <div class="form-group">
-                    <label for="password" class="text-secondary font-weight-bold">password</label>
+                    <label for="password" class="text-secondary font-weight-bold mb-3">password</label>
                     <input type="password" class="form-control" id="password" name="password" value="<?= isset($_POST['password']) ? $_POST['password'] : '' ?>" required>
                 </div>
+                <div class="text-center">
                 <button type="submit" name="submit" class="btn btn-outline-primary">Envoyer</button>
+                </div>
+                
                 <span class="font-italic text-danger"><?= isset($error['login']) ? $error['login'] : '' ?></span>
             </form>
         </div>
