@@ -27,7 +27,7 @@ require_once 'my-config.php';
                     <input type="password" class="form-control" id="password" name="password" value="<?= isset($_POST['password']) ? $_POST['password'] : '' ?>" required>
                 </div>
                 <button type="submit" name="submit" class="btn btn-outline-primary">Envoyer</button>
-                <span class="font-italic text-danger ml-3"><?= isset($error['login']) ? $error['login'] : '' ?></span>
+                <span class="font-italic text-danger"><?= isset($error['login']) ? $error['login'] : '' ?></span>
             </form>
         </div>
     </div>
