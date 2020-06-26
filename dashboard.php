@@ -18,9 +18,9 @@ require_once 'controllers\dashboard-controller.php';
 <body>
     <div class="container">
         <div class="row justify-content-center mt-5">
-            <img class="preview">
             <form enctype="multipart/form-data" action="" method="post" class="col-sm-6 mb-3 bg-light p-5 shadow">
                 <div class="h1 text-info text-center mb-3">Uploadez votre image</div>
+                <img class="preview">
                 <div class="form-group">
                     <label for="fichier_a_uploader" title="Recherchez le fichier à uploader !">Envoyer le fichier :</label>
                     <?= '(  ' . MAX_SIZE / 1000000 . ' Mo Max)' ?>
