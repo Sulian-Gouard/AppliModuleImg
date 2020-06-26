@@ -29,7 +29,6 @@ require_once 'my-config.php';
                 <div class="text-center">
                 <button type="submit" name="submit" class="btn btn-outline-primary">Envoyer</button>
                 </div>
-                
                 <span class="font-italic text-danger"><?= isset($error['login']) ? $error['login'] : '' ?></span>
             </form>
         </div>
