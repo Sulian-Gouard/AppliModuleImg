@@ -1,5 +1,6 @@
 <?php
 require_once 'my-config.php';
+require_once 'controllers\not-allowed-controller.php';
 ?>
 
 <!DOCTYPE html>
