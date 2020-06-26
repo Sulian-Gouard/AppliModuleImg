@@ -1,6 +1,7 @@
 <?php
 require_once 'my-config.php';
 require_once 'controllers\dashboard-controller.php';
+var_dump($_SESSION);
 
 ?>
 
