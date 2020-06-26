@@ -1,6 +1,4 @@
 <?php
-require_once 'my-config.php';
-
 
 $usersArray = [
     'admin' => 'navet',
@@ -10,13 +8,12 @@ $usersArray = [
 $error = array();
 
 if (!empty($_POST['login']) && (!empty($_POST['password']))) {
-    if ($usersArray[$_POST['login']] == $_POST['password']) {
+    if (!array_key_exists($_POST['login'], $usersArray)) {
+        $error['login'] = 'login ou password invalide';
+    }
+    elseif ($usersArray[$_POST['login']] == $_POST['password']) {
         header("Location: dashboard.php");
     } else {
-        $error['login'] = 'champs invalides';
+        $error['login'] = 'login ou password invalide';
     }
 }
-
-
-
-?>
