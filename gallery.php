@@ -16,7 +16,7 @@ require_once 'controllers\gallery-controller.php';
         .imgSizeMax {
             width: 150px;
             height: 150px;
-            border-width: 5px !important;
+            border-width: 4px !important;
         }
     </style>
 </head>
