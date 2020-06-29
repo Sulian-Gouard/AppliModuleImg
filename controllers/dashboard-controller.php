@@ -1,11 +1,11 @@
 <?php
 require_once 'my-config.php';
 
-if($_SESSION['login'] !='admin') {
+if ($_SESSION['login'] != 'admin') {
     header('location: not-allowed.php');
     exit;
- }
- 
+}
+
 // Constantes
 define('TARGET', 'img/');    // Repertoire cible
 define('MAX_SIZE', 1 * 1000 * 1000);    // Taille max en octets du fichier
@@ -56,21 +56,26 @@ if (!empty($_FILES['fichier']['name'])) {
                 // On verifie les dimensions et taille de l'image
                 if (($infosImg[0] <= WIDTH_MAX) && ($infosImg[1] <= HEIGHT_MAX) && (filesize($fileTemp) <= MAX_SIZE)) {
                     // Parcours du tableau d'erreurs
-                    if (
-                        isset($fileError) && UPLOAD_ERR_OK === $fileError
-                    ) {
-                        // On renomme le fichier
-                        $nomImage = md5(uniqid()) . '.' . $extension;
+                    // On vérifie si il reste de la place dans le dossier
+                    if (TailleDossier('img') <= (50 * 1000 * 1000)) {
 
-                        // Si c'est OK, on teste l'upload
-                        if (move_uploaded_file($fileTemp, TARGET . $nomImage)) {
-                            $message = 'Upload réussi !';
+                        if (isset($fileError) && UPLOAD_ERR_OK === $fileError) {
+                            // On renomme le fichier
+                            $nomImage = md5(uniqid()) . '.' . $extension;
+
+                            // Si c'est OK, on teste l'upload
+                            if (move_uploaded_file($fileTemp, TARGET . $nomImage)) {
+                                $message = 'Upload réussi !';
+                            } else {
+                                // Sinon on affiche une erreur systeme
+                                $message = 'Problème lors de l\'upload !';
+                            }
                         } else {
-                            // Sinon on affiche une erreur systeme
-                            $message = 'Problème lors de l\'upload !';
+                            $message = 'Une erreur interne a empêché l\'uplaod de l\'image';
                         }
                     } else {
-                        $message = 'Une erreur interne a empêché l\'uplaod de l\'image';
+                        // sinon erreur sur la taille du dossier
+                        $message = 'dossier plein !';
                     }
                 } else {
                     // Sinon erreur sur les dimensions et taille de l'image
@@ -92,19 +97,16 @@ if (!empty($_FILES['fichier']['name'])) {
 
 function TailleDossier($Rep)
 {
-    $Racine=opendir($Rep);
-    $Taille=0;
-    while($Dossier = readdir($Racine))
-    {
-      if ( $Dossier != '..' And $Dossier !='.' )
-      {
-        //Ajoute la taille du sous dossier
-        if(is_dir($Rep.'/'.$Dossier)) $Taille += TailleDossier($Rep.'/'.
-$Dossier);
-        //Ajoute la taille du fichier
-        else $Taille += filesize($Rep.'/'.$Dossier);
-
-      }
+    $Racine = opendir($Rep);
+    $Taille = 0;
+    while ($Dossier = readdir($Racine)) {
+        if ($Dossier != '..' and $Dossier != '.') {
+            //Ajoute la taille du sous dossier
+            if (is_dir($Rep . '/' . $Dossier)) $Taille += TailleDossier($Rep . '/' .
+                $Dossier);
+            //Ajoute la taille du fichier
+            else $Taille += filesize($Rep . '/' . $Dossier);
+        }
     }
     closedir($Racine);
     return $Taille;
