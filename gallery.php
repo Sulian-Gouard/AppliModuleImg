@@ -14,8 +14,8 @@ require_once 'controllers\gallery-controller.php';
     <title>gallery</title>
     <style>
         .imgSizeMax {
-            width: 150px;
-            height: 150px;
+            width: auto;
+            height: 10rem;
             border-width: 5px !important;
         }
     </style>
@@ -24,9 +24,17 @@ require_once 'controllers\gallery-controller.php';
 <body>
     <div class="container">
         <div class="row justify-content-center">
-                <?php foreach ($adminDirectory as $value) { ?>
-                    <a href="img/<?= $value ?>" data-lightbox="adminImg" data-title="My caption"><img class="imgSizeMax m-2 border border-secondary rounded-sm" src="img/<?= $value ?>"></a>
-                <?php } ?>
+            <?php foreach ($adminDirectory as $value) {
+                if (!in_array($value, array(".", ".."))) { ?>
+                    <a href="img/<?= $value ?>" data-lightbox="adminImg" data-title=""><img class="imgSizeMax m-2 border border-secondary rounded-sm" src="img/<?= $value ?>"></a>
+            <?php }
+            } ?>
+        </div>
+        <div class="row justify-content-center">
+            <form action="deconnection.php" method="post">
+                <button type="submit" name="deconnection" class="btn text-info mt-2">déconnexion</button>
+            </form>
+            <button type="button" class="btn text-info"><a class="btn text-info" href="dashboard.php">retour</a></button>
         </div>
     </div>
 
