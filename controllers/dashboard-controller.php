@@ -89,3 +89,23 @@ if (!empty($_FILES['fichier']['name'])) {
         $message = 'Veuillez uploader une image valide (Taille, Type ... ) !';
     }
 }
+
+function TailleDossier($Rep)
+{
+    $Racine=opendir($Rep);
+    $Taille=0;
+    while($Dossier = readdir($Racine))
+    {
+      if ( $Dossier != '..' And $Dossier !='.' )
+      {
+        //Ajoute la taille du sous dossier
+        if(is_dir($Rep.'/'.$Dossier)) $Taille += TailleDossier($Rep.'/'.
+$Dossier);
+        //Ajoute la taille du fichier
+        else $Taille += filesize($Rep.'/'.$Dossier);
+
+      }
+    }
+    closedir($Racine);
+    return $Taille;
+}

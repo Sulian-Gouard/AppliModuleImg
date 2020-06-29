@@ -20,6 +20,7 @@ require_once 'controllers\dashboard-controller.php';
             <form enctype="multipart/form-data" action="" method="post" class="col-sm-6 mb-3 bg-light p-5 shadow">
                 <div class="h1 text-info text-center mb-3">Uploadez votre image</div>
                 <img class="preview">
+                
                 <div class="form-group">
                     <label for="fichier_a_uploader" title="Recherchez le fichier à uploader !">Envoyer le fichier :</label>
                     <?= '(  ' . MAX_SIZE / 1000000 . ' Mo Max)' ?>
@@ -27,13 +28,16 @@ require_once 'controllers\dashboard-controller.php';
                 </div>
                 <button type="submit" name="submit" class="btn btn-outline-info mb-1">Uploader</button>
                 <a href="gallery.php" name="redirGallery" class="btn btn-outline-info mb-1 text-white">Gallery</a>
+                <?= '( ' . round(TailleDossier('img/') / 10000) . ' Mo )' ?>
                 <?php
                 if (!empty($message)) { ?>
                     <div class="text-secondary h6 font-weight-bold"><?= htmlspecialchars($message) ?></div>
                 <?php
                 }
                 ?>
+                <div class="mt-2"><a href="deconnection.php" class="text-dark">Me déconnecter</a></div>
             </form>
+
         </div>
     </div>
 
