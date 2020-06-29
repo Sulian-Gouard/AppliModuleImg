@@ -55,13 +55,11 @@ if (!empty($_FILES['fichier']['name'])) {
             if ($infosImg[2] >= 1 && $infosImg[2] <= 14) {
                 // On verifie les dimensions et taille de l'image
                 if (($infosImg[0] <= WIDTH_MAX) && ($infosImg[1] <= HEIGHT_MAX) && (filesize($fileTemp) <= MAX_SIZE)) {
-                    // On verifie taille max du dossier img
-                    if (TailleDossier('img') >= (1 * 1000 * 1000)) {
+                    // Parcours du tableau d'erreurs
+                    // On vérifie si il reste de la place dans le dossier
+                    if (TailleDossier('img') <= (50 * 1000 * 1000)) {
 
-                        // Parcours du tableau d'erreurs
-                        if (
-                            isset($fileError) && UPLOAD_ERR_OK === $fileError
-                        ) {
+                        if (isset($fileError) && UPLOAD_ERR_OK === $fileError) {
                             // On renomme le fichier
                             $nomImage = md5(uniqid()) . '.' . $extension;
 
@@ -76,7 +74,8 @@ if (!empty($_FILES['fichier']['name'])) {
                             $message = 'Une erreur interne a empêché l\'uplaod de l\'image';
                         }
                     } else {
-                        $message = 'la taille maximum du dossier à été atteinte';
+                        // sinon erreur sur la taille du dossier
+                        $message = 'dossier plein !';
                     }
                 } else {
                     // Sinon erreur sur les dimensions et taille de l'image
