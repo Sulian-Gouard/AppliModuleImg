@@ -1,7 +1,6 @@
 <?php
 require_once 'my-config.php';
 require_once 'controllers\dashboard-controller.php';
-
 ?>
 
 <!DOCTYPE html>
@@ -27,13 +26,14 @@ require_once 'controllers\dashboard-controller.php';
                     <input name="fichier" type="file" id="fichier_a_uploader" class="form-control-file" data-preview=".preview">
                 </div>
                 <button type="submit" name="submit" class="btn btn-outline-info mb-1">Uploader</button>
+                <a href="gallery.php" name="redirGallery" class="btn btn-outline-info mb-1 text-white">Gallery</a>
+                <?php
+                if (!empty($message)) { ?>
+                    <div class="text-secondary h6 font-weight-bold"><?= htmlspecialchars($message) ?></div>
+                <?php
+                }
+                ?>
             </form>
-            <?php
-            if (!empty($message)) { ?>
-                <div class="text-secondary h6 font-weight-bold"><?= htmlspecialchars($message) ?></div>
-            <?php
-            }
-            ?>
         </div>
     </div>
 
