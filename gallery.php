@@ -12,16 +12,21 @@ require_once 'controllers\gallery-controller.php';
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link href="assets\lightbox2-2.11.1\dist\css\lightbox.css" rel="stylesheet" />
     <title>gallery</title>
+    <style>
+        .imgSizeMax {
+            width: 150px;
+            height: 150px;
+            border-width: 5px !important;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="row align-content-center">
-            <div class="col-sm-8">
+        <div class="row justify-content-center">
                 <?php foreach ($adminDirectory as $value) { ?>
-                    <a href="img/<?= $value ?>" data-lightbox="adminImg" data-title="My caption"><img src="img/<?= $value ?>"></a>
+                    <a href="img/<?= $value ?>" data-lightbox="adminImg" data-title="My caption"><img class="imgSizeMax m-2 border border-secondary rounded-sm" src="img/<?= $value ?>"></a>
                 <?php } ?>
-            </div>
         </div>
     </div>
 
