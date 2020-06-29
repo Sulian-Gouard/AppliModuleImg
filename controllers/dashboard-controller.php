@@ -1,6 +1,11 @@
 <?php
 require_once 'my-config.php';
 
+if($_SESSION['login'] !='admin') { 
+    header('location: not-allowed.php');
+    exit;
+ }
+
 
 // Constantes
 define('TARGET', 'img/');    // Repertoire cible

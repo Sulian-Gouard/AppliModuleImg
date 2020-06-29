@@ -2,11 +2,6 @@
 require_once 'my-config.php';
 require_once 'controllers\dashboard-controller.php';
 
-if($_SESSION['login'] !='admin') { 
-   header('location: not-allowed.php');
-   exit;
-}
-
 ?>
 
 <!DOCTYPE html>
