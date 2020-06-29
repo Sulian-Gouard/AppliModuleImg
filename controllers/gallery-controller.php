@@ -7,6 +7,6 @@ if ($_SESSION['login'] != 'admin') {
 }
 
 $directory = 'img/';
-$adminDirectory = scandir($directory);
+$adminDirectory = scandir($directory, 1);
 
 
