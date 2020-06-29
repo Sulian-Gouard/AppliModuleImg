@@ -1,6 +1,7 @@
 <?php
 require_once 'my-config.php';
 require_once 'controllers\deconnection-controller.php';
+
 ?>
 
 <!DOCTYPE html>

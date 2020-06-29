@@ -24,3 +24,4 @@ if (!empty($_POST['login']) && (!empty($_POST['password']))) {
         $error['login'] = 'login ou password invalide';
     }
 }
+
