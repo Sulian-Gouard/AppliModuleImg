@@ -33,9 +33,10 @@ require_once 'controllers\dashboard-controller.php';
                 <?php
                 }
                 ?>
-                <div class="mt-2"><a href="deconnection.php" class="text-dark">Me déconnecter</a></div>
             </form>
-
+            <form action="deconnection.php" method="post">
+                <button type="submit" name="deconnection" class="btn btn-outline-info mt-2">Me déconnecter</button>
+            </form>
         </div>
     </div>
 
