@@ -28,7 +28,7 @@ require_once 'controllers\dashboard-controller.php';
                 </div>
                 <button type="submit" name="submit" class="btn btn-outline-info mb-1">Uploader</button>
                 <a href="gallery.php" name="redirGallery" class="btn btn-outline-info mb-1 text-white">Gallery</a>
-                <?= '( ' . round(TailleDossier('img/') / 10000) . ' Mo )' ?>
+                <?= '( ' . round(TailleDossier('img/') / 1000000) . ' Mo )' ?>
                 <?php
                 if (!empty($message)) { ?>
                     <div class="text-secondary h6 font-weight-bold"><?= htmlspecialchars($message) ?></div>
