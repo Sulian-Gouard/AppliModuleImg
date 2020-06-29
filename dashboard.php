@@ -28,7 +28,7 @@ require_once 'controllers\dashboard-controller.php';
                 </div>
                 <button type="submit" name="submit" class="btn btn-outline-info mb-1">Uploader</button>
                 <a href="gallery.php" name="redirGallery" class="btn btn-outline-info mb-1 text-white">Gallery</a>
-                <?= '( ' . round(TailleDossier('img/') / 10000) . ' Mo )' ?>
+                <?= '( ' . round(TailleDossier('img/') / 1000000) . ' Mo )' ?>
                 <?php
                 if (!empty($message)) { ?>
                     <div class="text-secondary h6 font-weight-bold"><?= htmlspecialchars($message) ?></div>
@@ -41,7 +41,6 @@ require_once 'controllers\dashboard-controller.php';
             </form>
         </div>
     </div>
-
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

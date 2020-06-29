@@ -10,7 +10,7 @@ require_once 'controllers\gallery-controller.php';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <link href="assets\lightbox2-2.11.1\dist\css\lightbox.css" rel="stylesheet" />
+    <link href="assets\lightbox2-2.11.1\dist\css\lightbox.css" rel="stylesheet">
     <title>gallery</title>
 </head>
 
