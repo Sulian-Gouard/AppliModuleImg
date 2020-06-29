@@ -5,3 +5,4 @@
     foreach ($adminDirectory as $key => $value) {
         $result = $value;
     }
+    var_dump($result);
