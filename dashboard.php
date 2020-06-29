@@ -20,7 +20,7 @@ require_once 'controllers\dashboard-controller.php';
             <form enctype="multipart/form-data" action="" method="post" class="col-sm-6 mb-3 bg-light p-5 shadow">
                 <div class="h1 text-info text-center mb-3">Uploadez votre image</div>
                 <img class="preview">
-                
+
                 <div class="form-group">
                     <label for="fichier_a_uploader" title="Recherchez le fichier à uploader !">Envoyer le fichier :</label>
                     <?= '(  ' . MAX_SIZE / 1000000 . ' Mo Max)' ?>
@@ -36,8 +36,14 @@ require_once 'controllers\dashboard-controller.php';
                 }
                 ?>
             </form>
+        </div>
+        <div class="row justify-content-center mt-1">
             <form action="deconnection.php" method="post">
+<<<<<<< HEAD
                 <button type="submit" name="deconnection" class="btn text-info mt-2">Me déconnecter</button>
+=======
+                <button type="submit" name="deconnection" class="btn text-info">déconnexion</button>
+>>>>>>> 4f3f7f81fa5002282d0b63c67b6344a944ae0ec2
             </form>
         </div>
     </div>
