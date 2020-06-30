@@ -24,3 +24,9 @@ if (!empty($_POST['login']) && (!empty($_POST['password']))) {
         $error['login'] = 'login ou password invalide';
     }
 }
+
+if (isset($_POST['submit'])) {
+    if (empty($_POST['login']) || (empty($_POST['password']))) {
+        $error['login'] = 'veuillez renseigner les champs';
+    }
+}
