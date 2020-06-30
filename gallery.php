@@ -13,7 +13,7 @@ require_once 'controllers\gallery-controller.php';
     <link href="assets\lightbox2-2.11.1\dist\css\lightbox.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
     <link href="\assets\uploadPreview.css" rel="stylesheet">
-    <title>gallery</title>
+    <title>Galerie</title>
 </head>
 
 <body class="row justify-content-center">

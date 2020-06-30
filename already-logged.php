@@ -1,5 +1,5 @@
 <?php
-require_once 'my-config.php';
+
 
 ?>
 
@@ -20,19 +20,10 @@ require_once 'my-config.php';
         <div class="row justify-content-center mt-5">
             <form class="col-sm-6 mb-3 bg-light p-5 shadow" action="index.php" method="post" novalidate>
                 <div class="h1 text-info text-center mb-3" id="mainTitle">allPIX</div>
-                <div class="form-group">
-                    <label for="login" class="text-secondary font-weight-bold">login</label>
-                    <input type="text" class="form-control" id="login" name="login" value="<?= isset($_POST['login']) ? $_POST['login'] : '' ?>" required>
-                </div>
-                <div class="form-group">
-                    <label for="password" class="text-secondary font-weight-bold mb-3">password</label>
-                    <input type="password" class="form-control" id="password" name="password" value="<?= isset($_POST['password']) ? $_POST['password'] : '' ?>" required>
-                </div>
+                <p class="text-center mb-4">Vous êtes déja connecté</p>
                 <div class="text-center">
-                    <button type="submit" name="submit" class="btn btn-outline-info">Envoyer</button>
-                </div>
-                <div class="text-center mt-2">
-                    <span class="font-italic text-danger"><?= isset($error['login']) ? $error['login'] : '' ?></span>
+                    <button type="button" name="submit" class=" btn text-info mr-1"><a class="btn text-info" href="gallery.php">Retourner à la galerie</a></button>
+                    <button type="submit" name="deconnection" class="btn text-info ml-1">déconnexion</button>
                 </div>
             </form>
         </div>
