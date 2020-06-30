@@ -8,7 +8,7 @@ if ($_SESSION['login'] != 'admin') {
 
 // Constantes
 define('TARGET', 'img/');    // Repertoire cible
-define('MAX_SIZE', 1 * 1000 * 1000);    // Taille max en octets du fichier
+define('MAX_SIZE', 5 * 1000 * 1000);    // Taille max en octets du fichier
 define('WIDTH_MAX', 80000);    // Largeur max de l'image en pixels
 define('HEIGHT_MAX', 80000);    // Hauteur max de l'image en pixels
 

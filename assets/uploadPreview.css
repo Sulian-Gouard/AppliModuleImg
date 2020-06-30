@@ -1,5 +1,5 @@
 .preview {
-	width: 200px; 
+	width: 200px;
 	max-height: 200px;
 	display: block;
 }
@@ -15,4 +15,22 @@
 
 .backgroundForm {
 	background-color: #F5F5F5;
+}
+
+#mainTitle {
+	font-family: 'Kaushan Script', cursive;
+	font-size: 3rem;
+}
+
+/* GALERIE */
+
+.containerGallery {
+
+	box-shadow: 0px 5px 9px rgba(0, 0, 0, 0.3);
+}
+
+.imgSizeMax {
+	width: auto;
+	height: 10rem;
+	box-shadow: 0px 5px 9px rgba(0, 0, 0, 0.3);
 }

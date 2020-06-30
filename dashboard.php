@@ -9,6 +9,7 @@ require_once 'controllers\dashboard-controller.php';
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
     <link rel="stylesheet" href="assets\uploadPreview.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>moduleIMG</title>
@@ -39,11 +40,7 @@ require_once 'controllers\dashboard-controller.php';
         </div>
         <div class="row justify-content-center mt-1">
             <form action="deconnection.php" method="post">
-<<<<<<< HEAD
-                <button type="submit" name="deconnection" class="btn text-info mt-2">Me déconnecter</button>
-=======
                 <button type="submit" name="deconnection" class="btn text-info">déconnexion</button>
->>>>>>> 4f3f7f81fa5002282d0b63c67b6344a944ae0ec2
             </form>
         </div>
     </div>

@@ -8,6 +8,7 @@ require_once 'my-config.php';
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets\uploadPreview.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>moduleIMG</title>
@@ -15,9 +16,9 @@ require_once 'my-config.php';
 
 <body>
     <div class="container">
-        <div class="row justify-content-center mt-5">
+        <div class="row justify-content-center mt-5" id="chiracForm">
             <form class="col-sm-6 mb-3 bg-light p-5 shadow" action="index.php" method="post" novalidate>
-                <div class="h1 text-info text-center mb-3">allPIX</div>
+                <div class="h1 text-info text-center mb-3" id="mainTitle">allPIX</div>
                 <div class="form-group">
                     <label for="login" class="text-secondary font-weight-bold">login</label>
                     <input type="text" class="form-control" id="login" name="login" value="<?= isset($_POST['login']) ? $_POST['login'] : '' ?>" required>
