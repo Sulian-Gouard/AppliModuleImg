@@ -1,5 +1,11 @@
 <?php
 require_once 'my-config.php';
+
+if ($_SESSION['login'] != 'guest') {
+    header('location: already-logged.php');
+    exit;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +22,7 @@ require_once 'my-config.php';
 
 <body>
     <div class="container">
-        <div class="row justify-content-center mt-5" id="chiracForm">
+        <div class="row justify-content-center mt-5">
             <form class="col-sm-6 mb-3 bg-light p-5 shadow" action="index.php" method="post" novalidate>
                 <div class="h1 text-info text-center mb-3" id="mainTitle">allPIX</div>
                 <div class="form-group">
