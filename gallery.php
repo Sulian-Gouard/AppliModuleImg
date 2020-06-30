@@ -30,7 +30,9 @@ require_once 'controllers\gallery-controller.php';
             <form action="deconnection.php" method="post">
                 <button type="submit" name="deconnection" class="btn text-info mt-2">déconnexion</button>
             </form>
+            <?php if ($_SESSION['login'] == 'admin') { ?>
             <button type="button" class="btn text-info"><a class="btn text-info" href="dashboard.php">retour</a></button>
+            <?php } ?>
         </div>
     </div>
 
