@@ -10,6 +10,7 @@ require_once 'controllers\deconnection-controller.php';
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets\uploadPreview.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>moduleIMG</title>
@@ -19,7 +20,7 @@ require_once 'controllers\deconnection-controller.php';
     <div class="container">
         <div class="row justify-content-center mt-5">
             <div class="col-sm-4 mb-3 bg-light p-5 shadow text-center">
-                <div class="h1 text-info text-center mb-4">allPIX</div>
+                <div class="h1 text-info text-center mb-4" id="mainTitle">allPIX</div>
                 <div class="text-secondary h5 mb-4">Vous avez bien été déconnecté.</div>
                 <a class="text-info h4 text-center" href="index.php">Accueil</a>
             </div>

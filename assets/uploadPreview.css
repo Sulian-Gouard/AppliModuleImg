@@ -4,10 +4,6 @@
 	display: block;
 }
 
-.mainTitle {
-	color: #4D7C8A;
-}
-
 .btn-outline-info {
 	background-color: #4D7C8A;
 	color: #F5F5F5;
@@ -20,6 +16,7 @@
 #mainTitle {
 	font-family: 'Kaushan Script', cursive;
 	font-size: 3rem;
+	color: #4D7C8A;
 }
 
 /* GALERIE */
@@ -34,3 +31,12 @@
 	height: 10rem;
 	box-shadow: 0px 5px 9px rgba(0, 0, 0, 0.3);
 }
+
+body {
+	/* color: black;
+	background-color: white;
+	background-image: url(/assets/camera-photography-technology-reflection-122400.jpg) ;
+	background-size: 100vw;
+	 */
+}
+
